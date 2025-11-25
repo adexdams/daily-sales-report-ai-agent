@@ -1,6 +1,6 @@
 # Daily Sales Reporter AI Agent System
 
-![img_1.png](architecture-workflow.jpg)
+![img_1.png](notebook-output.png)
 
 ## Overview
 

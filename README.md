@@ -97,19 +97,19 @@ High-level architecture and flow:
 
 The Daily Sales Report System relies on a focused set of tools that enable each agent to execute its role effectively. These utilities form the operational core of the pipeline, allowing the system to extract data, compute metrics, generate summaries, and support interactive follow-up conversations.
 
-Daily Report Processing (`daily_report_tool_for_agent`)
+**Daily Report Processing** (`daily_report_tool_for_agent`)
 
 This is the primary tool that powers the data retrieval layer of the system. It loads the sales dataset, filters by the requested date, computes the required metrics, and returns a structured response. It acts as the backbone for both the `daily_report_agent` and `orchestrator_agent`, ensuring consistent and validated data flows into the rest of the pipeline.
 
-Executive Summary Generator (`generate_executive_summary_for_agent`)
+**Executive Summary Generator** (`generate_executive_summary_for_agent`)
 
 This tool transforms raw metrics into a clear, manager-ready executive summary. It receives structured output from the reporting agent and synthesizes it into a concise narrative that highlights trends, risks, and operational signals. This utility allows the `summary_agent` to focus purely on communication rather than computation.
 
-Session Memory Utilities (session-based metric and summary storage)
+**Session Memory Utilities** (session-based metric and summary storage)
 
 While not a standalone tool, the session storage mechanism plays a key supporting role across the system. After the orchestrator produces a report, key outputs such as metrics JSON and executive summary text are stored in the Streamlit session. The `followup_agent` then uses this stored context to answer user questions without recomputing data, preserving state and interaction continuity.
 
-ADK Tool Wrappers (`AgentTool`)
+**ADK Tool Wrappers** (`AgentTool`)
 
 Tools are wrapped using Google ADK’s AgentTool to allow agents to call one another safely and in a controlled execution environment. This ensures that the `orchestrator_agent` can sequentially trigger the daily report pipeline and summary generation without managing implementation details. The wrapping mechanism adds structure, reliability, and modularity to the multi-agent ecosystem.
 
@@ -127,9 +127,8 @@ This system demonstrates how multi-agent architectures built with the Google ADK
 
 The Daily Sales Report Agent System cuts hours of manual analysis from a manager’s workflow by automatically generating clear, decision-ready insights from raw transaction data. Instead of combing through spreadsheets, leaders receive an executive-level summary with trends, anomalies, and strategic recommendations within seconds. This not only accelerates operational decision-making but also improves consistency and quality across daily reporting.
 
-In the future these agents could be extended to support forecasting, multi-day comparative analytics, and automated anomaly investigation. These additions would further elevate the system from a reporting assistant to a full intelligence partner for retail and e-commerce operations.
+In the future, these agents could be extended to support forecasting, multi-day comparative analytics, and automated anomaly investigation. These additions would further elevate the system from a reporting assistant to a full intelligence partner for retail and e-commerce operations.
 
----
 
 ## Data Source
 

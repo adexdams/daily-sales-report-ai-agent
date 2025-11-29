@@ -113,6 +113,8 @@ While not a standalone tool, the session storage mechanism plays a key supportin
 
 Tools are wrapped using Google ADK’s AgentTool to allow agents to call one another safely and in a controlled execution environment. This ensures that the `orchestrator_agent` can sequentially trigger the daily report pipeline and summary generation without managing implementation details. The wrapping mechanism adds structure, reliability, and modularity to the multi-agent ecosystem.
 
+![img_1.png](adk-web-interface.png)
+
 ---
 
 ## Conclusion
